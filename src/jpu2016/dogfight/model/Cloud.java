@@ -12,4 +12,8 @@ public class Cloud extends Mobile {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public boolean hit() {
+		return false;
+	}
 }
