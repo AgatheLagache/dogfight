@@ -1,8 +1,9 @@
 package jpu2016.dogfight.model;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
-public class DogfightModel implements IDogfightModel {
+public class DogfightModel extends Observable implements IDogfightModel {
 
 	private Sky					sky;
 	private ArrayList<IMobile>	mobiles;
@@ -12,8 +13,8 @@ public class DogfightModel implements IDogfightModel {
 	}
 
 	@Override
-	public IArea getArea() {
-		return null;
+	public void addMobile(final IMobile Mobile) {
+
 	}
 
 	@Override
@@ -22,13 +23,13 @@ public class DogfightModel implements IDogfightModel {
 	}
 
 	@Override
-	public void addMobile(final IMobile Mobile) {
-
+	public IArea getArea() {
+		return null;
 	}
 
 	@Override
-	public void removeMobile(final IMobile Mobile) {
-
+	public IMobile getMobileByPlayer(final int player) {
+		return null;
 	}
 
 	@Override
@@ -37,8 +38,8 @@ public class DogfightModel implements IDogfightModel {
 	}
 
 	@Override
-	public IMobile getMobileByPlayer(final int player) {
-		return null;
+	public void removeMobile(final IMobile Mobile) {
+
 	}
 
 	@Override

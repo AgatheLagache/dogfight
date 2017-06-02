@@ -10,6 +10,10 @@ public class dogfight {
 		final DogfightController dogfightController = new DogfightController(dogfightModel);
 		final DogfightView dogfightView = new DogfightView(dogfightController, dogfightModel, dogfightModel);
 		dogfightController.setViewSystem(dogfightView); dogfightController.play();
+
+
+
+
 		//Dans le main, c’est vous qui créerez les avions et les nuages.
 		//L’ordre dans lequel vous le ferez aura une incidence sur le jeu.
 		//En effet, les premiers créés seront sous les autres. Si vous créez les avions avant les nuages, ces derniers cacheront les avions.
