@@ -10,17 +10,17 @@ public class DogfightController implements IOrderPerformer{
 	private int GameStatus = 1; //GameStatus = 1, pas de défaite ; GameStatus = 0, défaite d'un des joueurs
 
 	public DogfightController(IDogfightModel dogfightModel){
-
+		this.dogfightModel = dogfightModel;
 	}
 
 	private void gameLoop(){
 		//La méthode gameLoop() (lancée par la méthode play()) est une boucle infinie (elle n’est stoppé que par la mort d’un avion).
 		//Elle lance la méthode move sur chacun des mobiles présents.
 		//Il s’agit d’un mécanisme classique dans les jeux vidéo qui ne sont pas en tour par tour.
-		while(this.GameStatus != 0)
-		{
-			move();
-		}
+		//while(this.GameStatus != 0)
+		//{
+		//	move();
+		//}
 	}
 
 	public void isWeaponOnMobile(){
@@ -46,6 +46,8 @@ public class DogfightController implements IOrderPerformer{
 
 	public void play(){
 		//La méthode play(), lance la méthode gameLoop() et affiche un message (via l’interface IViewSystem fournie par la vue) de fin de partie.
+		this.gameLoop();
+
 	}
 
 	public void setViewSystem(IViewSystem viewSystem){

@@ -18,11 +18,6 @@ public class DogfightView implements IViewSystem, Runnable {
 	}
 
 	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
 	public void closeAll() {
 		// TODO Auto-generated method stub
 
@@ -32,6 +27,11 @@ public class DogfightView implements IViewSystem, Runnable {
 	public void displayMessage(String message) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
 	}
 
 }
