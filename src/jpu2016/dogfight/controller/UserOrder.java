@@ -1,7 +1,7 @@
 package jpu2016.dogfight.controller;
 
 public class UserOrder implements IUserOrder {
-	private int player;
+	private int player = 0;
 	private Order order;
 
 	public UserOrder(int player, Order order){
@@ -22,7 +22,26 @@ public class UserOrder implements IUserOrder {
 	}
 
 	public void setOrder(Order order) {
+<<<<<<< HEAD
 
+=======
+		switch (order){
+		case UP:
+			break;
+		case RIGHT:
+			break;
+		case DOWN:
+			break;
+		case LEFT:
+			break;
+		case SHOOT:
+			break;
+		case NOP:
+			break;
+		default:
+			break;
+		}
+>>>>>>> branch 'Agathe' of https://github.com/AgatheLagache/dogfight
 		this.order = order;
 	}
 
