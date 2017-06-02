@@ -8,12 +8,11 @@ import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements Observer {
 
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 7127081990563635521L;
+	private IGraphicsBuilder	iGraphicsBuilder;
 
-	public GamePanel(IGraphicsBuilder graphicBuilder) {
+	private static final long	serialVersionUID	= 7127081990563635521L;
+
+	public GamePanel(IGraphicsBuilder graphicsBuilder) {
 
 	}
 

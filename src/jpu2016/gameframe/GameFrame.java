@@ -8,12 +8,13 @@ import javax.swing.JFrame;
 
 public class GameFrame extends JFrame implements KeyListener {
 
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 7724066032872705508L;
+	private IEventPerformer		iEventPerformer;
+	private GamePanel			gamePanel;
+
+	private static final long	serialVersionUID	= 7724066032872705508L;
 
 	public GameFrame(String title, IEventPerformer performer, IGraphicsBuilder graphicsBuilder, Observable observable) {
+		this.gamePanel = new GamePanel(graphicsBuilder);
 
 	}
 
