@@ -1,6 +1,7 @@
 package jpu2016.dogfight.controller;
 
 import jpu2016.dogfight.model.IDogfightModel;
+import jpu2016.dogfight.model.IMobile;
 import jpu2016.dogfight.view.IViewSystem;
 
 public class DogfightController implements IOrderPerformer{
@@ -23,9 +24,19 @@ public class DogfightController implements IOrderPerformer{
 		//}
 	}
 
-	public void isWeaponOnMobile(){
-		//La méthode isWeaponOnMobile() permet de calculer si un missile se trouve sur un mobile.
+	private boolean isWeaponOnMobile(final IMobile mobile, final IMobile weapon) {
+		if (((weapon.getPosition().getX() / weapon.getWidth()) >= (mobile.getPosition().getX() / weapon.getWidth()))
+				&& ((weapon.getPosition().getX() / weapon.getWidth())
+						<= ((mobile.getPosition().getX() + mobile.getWidth()) / weapon.getWidth()))){
+			if (((weapon.getPosition().getY() / weapon.getHeight()) >= (mobile.getPosition().getY() / weapon.getHeight()))
+					&& ((weapon.getPosition().getY() / weapon.getHeight())
+							<= ((mobile.getPosition().getY() + mobile.getHeight()) / weapon.getHeight()))) {
+				return true;
+			}
+		}
+		return false;
 	}
+
 
 	private void lauchMissile(int player){
 		//La méthode lauchMissile() comme son nom l’indique créé un missile devant l’avion qui tire.
@@ -42,6 +53,22 @@ public class DogfightController implements IOrderPerformer{
 	public void orderPerform(UserOrder userOrder) {
 		// TODO Auto-generated method stub
 		//La méthode orderPerform() récupère les ordre envoyés par la vue et en fonction lance les méthodes adéquat sur les éléments du modèle (plane.setDirection()).
+		switch (order){
+		case UP:
+			break;
+		case RIGHT:
+			break;
+		case DOWN:
+			break;
+		case LEFT:
+			break;
+		case SHOOT:
+			break;
+		case NOP:
+			break;
+		default:
+			break;
+		}
 	}
 
 	public void play(){

@@ -11,13 +11,24 @@ public class UserOrder implements IUserOrder {
 	@Override
 	public Order getOrder() {
 		// TODO Auto-generated method stub
-		return null;
+
+		return this.order;
 	}
 
 	@Override
 	public int getPlayer() {
 		// TODO Auto-generated method stub
-		return 1;
+		return this.player;
+	}
+
+	public void setOrder(Order order) {
+
+		this.order = order;
+	}
+
+	public void setPlayer(int player) {
+
+		this.player = player;
 	}
 
 }

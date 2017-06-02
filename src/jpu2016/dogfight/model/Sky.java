@@ -16,7 +16,19 @@ public class Sky implements IArea {
 	}
 
 	@Override
+	public int getHeight() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
 	public Image getImage() {
 		return null;
+	}
+
+	@Override
+	public int getWidth() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
