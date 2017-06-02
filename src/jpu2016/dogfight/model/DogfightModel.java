@@ -5,11 +5,16 @@ import java.util.Observable;
 
 public class DogfightModel extends Observable implements IDogfightModel {
 
-	private Sky					sky;
+	private final Sky			sky;
 	private ArrayList<IMobile>	mobiles;
 
 	public DogfightModel() {
-		// TODO Auto-generated constructor stub
+		Dimension DimSky;
+		DimSky = new Dimension(50, 50);
+		this.sky = new Sky(DimSky);
+		final ArrayList mobiles = new ArrayList();
+		mobiles.add(new Plane(1, Direction.RIGHT, new Position(5, 5, 30, 50), "F4U_RIGHT"));
+		// TODO Auto-generated constructor stub$
 	}
 
 	@Override

@@ -1,18 +1,36 @@
 package jpu2016.dogfight.model;
 
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class Sky implements IArea {
+	private final File		file	= null;
+	private final Dimension	dimension;
+	private Image			image	= null;
 
-	private Dimension dimension;
+	public Sky(final Dimension dimSky) {
+		this.dimension = dimSky;
+		try {
+			this.image = ImageIO.read(this.file);
+		} catch (final IOException e) {
+			e.printStackTrace();
+		}
 
-	public Sky(final Dimension dimension) {
-		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Image getImage() {
+		return this.image;
+
 	}
 
 	@Override
 	public Dimension getDimension() {
-		return new Dimension(1, 1);
+		// TODO Auto-generated method stub
+		return this.dimension;
 	}
 
 	@Override
@@ -22,13 +40,9 @@ public class Sky implements IArea {
 	}
 
 	@Override
-	public Image getImage() {
-		return null;
-	}
-
-	@Override
 	public int getWidth() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 }

@@ -11,5 +11,4 @@ public interface IArea {
 
 	public int getWidth();
 
-
 }
