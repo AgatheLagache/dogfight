@@ -7,7 +7,7 @@ public class Missile extends Mobile {
 	private static int		HEIGHT					= 10;
 	private static int		MAX_DISTANCE_TRAVELED	= 1400;
 	private static String	IMAGE					= "missile";
-	private final int		distanceTraveled		= 0;
+	private int				distanceTraveled		= 0;
 
 	public Missile(final Direction direction, final Position position) {
 		super(direction, position, new Dimension(WIDTH, HEIGHT), SPEED, IMAGE);
@@ -15,21 +15,47 @@ public class Missile extends Mobile {
 	}
 
 	public static int getWidthWithADirection(final Direction direction) {
-		return 1;
+		switch (direction) {
+		case UP:
+		case DOWN:
+			WIDTH = 10;
+			break;
+
+		case LEFT:
+		case RIGHT:
+			WIDTH = 30;
+			break;
+		}
+		return WIDTH;
 	}
 
 	public static int getHeightWithADirection(final Direction direction) {
-		return 1;
+		switch (direction) {
+		case UP:
+		case DOWN:
+			HEIGHT = 30;
+			break;
+
+		case LEFT:
+		case RIGHT:
+			HEIGHT = 10;
+			break;
+		}
+		return HEIGHT;
 	}
 
 	@Override
 	public void move() {
+		while (this.distanceTraveled <= this.MAX_DISTANCE_TRAVELED) {
+			this.distanceTraveled = this.distanceTraveled + this.SPEED;
+		}
+		this.getDogfightModel().removeMobile(this);
 
 	}
 
 	@Override
 	public boolean isWeapon() {
-		return false;
+		return true;
 	}
 
 	@Override
